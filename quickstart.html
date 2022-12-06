@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Overview - ChrisslyEngine Documentation</title>
+        <title>Quickstart - ChrisslyEngine Documentation</title>
         <!-- Custom HTML head -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +74,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html" class="active">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html" class="active"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -133,70 +133,64 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
-<h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
-<h3 id="playstation-portable"><a class="header" href="#playstation-portable">Playstation Portable</a></h3>
-<p><img src="screenshots/screen_animationtest.png" alt="animationtest" />
-<img src="screenshots/screen_materialtest.png" alt="materialtest" /></p>
-<h3 id="android"><a class="header" href="#android">Android</a></h3>
-<p><img src="screenshots/screen_animationtest_android.png" alt="animationtest_android" /></p>
-<h2 id="features"><a class="header" href="#features">Features</a></h2>
-<h3 id="platform-support"><a class="header" href="#platform-support">Platform Support</a></h3>
-<ul>
-<li>Playstation Portable</li>
-<li>Android</li>
-<li>Windows</li>
-</ul>
-<h3 id="audio"><a class="header" href="#audio">Audio</a></h3>
-<ul>
-<li>channel management</li>
-<li>buffered and streamed playback</li>
-<li>3d sound (built-in software implementation wich works with all devices/drivers that support at least stereo output, linear clamped roll-off)</li>
-<li>File Format Support
-<ul>
-<li>RIFF WAVE (*.wav)</li>
-<li>Ogg Vorbis (*.ogg)</li>
-</ul>
-</li>
-<li>real-time dsp system</li>
-</ul>
-<h3 id="graphics"><a class="header" href="#graphics">Graphics</a></h3>
-<ul>
-<li>Materials
-<ul>
-<li>C-like syntax material description language that exposes common fixed function operations with support for multi-pass rendering</li>
-<li>Shader parameters can be modified in the application using a simple highlevel interface</li>
-</ul>
-</li>
-<li>Animation
-<ul>
-<li>Skeletal animation with support for weighted blending of multiple animations</li>
-<li>Morph animation (linear blends between shape snapshots)</li>
-</ul>
-</li>
-<li>Texture-based shadows</li>
-</ul>
-<h3 id="tools"><a class="header" href="#tools">Tools</a></h3>
-<ul>
-<li>Blender Add-on
-<ul>
-<li>Export to ChrisslyEngine-Mesh (<em>.mesh), ChrisslyEngine-Texture (</em>.tex), ChrisslyEngine-Materialdescription (<em>.material) and ChrisslyEngine-Skeleton (</em>.skeleton) directly from Blender</li>
-</ul>
-</li>
-<li>Command line tools
-<ul>
-<li>meshtool: Converts Wavefront-ASCII-OBJ (<em>.obj) to ChrisslyEngine-Mesh (</em>.mesh), creating a morphanimation from a series of (*.obj) files is also supported</li>
-<li>texturetool: Adds ChrisslyEngine texture header to raw texture data</li>
-</ul>
-</li>
-</ul>
+                        <h1 id="quickstart"><a class="header" href="#quickstart">Quickstart</a></h1>
+<h2 id="building-and-running-the-windows-sample"><a class="header" href="#building-and-running-the-windows-sample">Building, and running the windows sample</a></h2>
+<h3 id="building-the-sample"><a class="header" href="#building-the-sample">Building the sample</a></h3>
+<ol>
+<li>install Visual Studio 2015 or higher</li>
+<li>open 'windows/ChrisslyEngine_Windows.sln', right click 'ChrisslyEngine_Windows' in the project explorer and click 'Build'</li>
+<li>run 'windows/exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample"><a class="header" href="#running-the-sample">Running the sample</a></h3>
+<ol>
+<li>press 'F5' in Visual Studio to start/debug the sample application</li>
+</ol>
+<h2 id="building-and-running-the-psp-sample"><a class="header" href="#building-and-running-the-psp-sample">Building, and running the psp sample</a></h2>
+<h3 id="building-the-sample-1"><a class="header" href="#building-the-sample-1">Building the sample</a></h3>
+<ol>
+<li>install devkitPSP (see: <a href="http://devkitpro.org/wiki/Getting_Started/devkitPSP">http://devkitpro.org/wiki/Getting_Started/devkitPSP</a>)</li>
+<li>open a commandline, goto 'chrisslyengine\psp' and run 'make' or open 'ChrisslyEngine_PSP.pnproj' and press 'ALT + 1'</li>
+<li>run 'psp\exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample-on-a-real-psp"><a class="header" href="#running-the-sample-on-a-real-psp">Running the sample on a real PSP</a></h3>
+<ol>
+<li>create a new folder 'ms0:/PSP/GAME/ChrisslyEngine_PSP'</li>
+<li>copy the 'export' folder and the 'EBOOT.PBP' to the new folder</li>
+<li>use 'Half-Byte Loader' (see: <a href="http://wololo.net/hbl">http://wololo.net/hbl</a>) to execute, since the PBP is not signed</li>
+</ol>
+<h3 id="running-the-sample-on-the-jpcsp-emulator"><a class="header" href="#running-the-sample-on-the-jpcsp-emulator">Running the sample on the JPCSP emulator</a></h3>
+<ol>
+<li>copy the 'export' folder to 'jpcsp\ms0\PSP\GAME\ChrisslyEngine_PSP'</li>
+<li>open JPCSP, then load the EBOOT.PBP with 'Load File' and press 'Run'</li>
+</ol>
+<h3 id="running-the-sample-on-the-ppsspp-emulator"><a class="header" href="#running-the-sample-on-the-ppsspp-emulator">Running the sample on the PPSSPP emulator</a></h3>
+<ol>
+<li>copy the 'export' folder to 'ppsspp_win\memstick\PSP\GAME\ChrisslyEngine_PSP'</li>
+<li>open PPSSPP, then load the EBOOT.PBP with 'File' -&gt; 'Open'</li>
+</ol>
+<h2 id="building-and-running-the-android-sample"><a class="header" href="#building-and-running-the-android-sample">Building, and running the android sample</a></h2>
+<h3 id="building-the-sample-2"><a class="header" href="#building-the-sample-2">Building the sample</a></h3>
+<ol>
+<li>edit 'android\ChrisslyEngine_Android\build.cmd'</li>
+<li>change 'NDK' variable to point to your NDK installation directory</li>
+<li>run 'build.cmd'</li>
+<li>run 'exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample-with-eclipse-and-the-android-development-tool-adt"><a class="header" href="#running-the-sample-with-eclipse-and-the-android-development-tool-adt">Running the sample with Eclipse and the Android Development Tool (ADT)</a></h3>
+<ol>
+<li>install eclipse and adt as described here: <a href="http://developer.android.com/ndk/guides/setup.html">http://developer.android.com/ndk/guides/setup.html</a></li>
+<li>open eclipse</li>
+<li>'File' -&gt; 'Import' -&gt; 'Existing Projects into Workspace'</li>
+<li>select 'android\ChrisslyEngine_Android' and click 'Finish'</li>
+<li>right click the application in the project explorer 'Run As' -&gt; '1 Android Application'</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="quickstart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
+                            <a rel="prev" href="overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -204,8 +198,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="quickstart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
+                    <a rel="prev" href="overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
                     </a>
             </nav>
 

@@ -3,7 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Overview - ChrisslyEngine Documentation</title>
+        <title>ChrisslyEngine Documentation</title>
+        <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html" class="active">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -190,23 +191,68 @@
 </ul>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quickstart"><a class="header" href="#quickstart">Quickstart</a></h1>
+<h2 id="building-and-running-the-windows-sample"><a class="header" href="#building-and-running-the-windows-sample">Building, and running the windows sample</a></h2>
+<h3 id="building-the-sample"><a class="header" href="#building-the-sample">Building the sample</a></h3>
+<ol>
+<li>install Visual Studio 2015 or higher</li>
+<li>open 'windows/ChrisslyEngine_Windows.sln', right click 'ChrisslyEngine_Windows' in the project explorer and click 'Build'</li>
+<li>run 'windows/exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample"><a class="header" href="#running-the-sample">Running the sample</a></h3>
+<ol>
+<li>press 'F5' in Visual Studio to start/debug the sample application</li>
+</ol>
+<h2 id="building-and-running-the-psp-sample"><a class="header" href="#building-and-running-the-psp-sample">Building, and running the psp sample</a></h2>
+<h3 id="building-the-sample-1"><a class="header" href="#building-the-sample-1">Building the sample</a></h3>
+<ol>
+<li>install devkitPSP (see: <a href="http://devkitpro.org/wiki/Getting_Started/devkitPSP">http://devkitpro.org/wiki/Getting_Started/devkitPSP</a>)</li>
+<li>open a commandline, goto 'chrisslyengine\psp' and run 'make' or open 'ChrisslyEngine_PSP.pnproj' and press 'ALT + 1'</li>
+<li>run 'psp\exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample-on-a-real-psp"><a class="header" href="#running-the-sample-on-a-real-psp">Running the sample on a real PSP</a></h3>
+<ol>
+<li>create a new folder 'ms0:/PSP/GAME/ChrisslyEngine_PSP'</li>
+<li>copy the 'export' folder and the 'EBOOT.PBP' to the new folder</li>
+<li>use 'Half-Byte Loader' (see: <a href="http://wololo.net/hbl">http://wololo.net/hbl</a>) to execute, since the PBP is not signed</li>
+</ol>
+<h3 id="running-the-sample-on-the-jpcsp-emulator"><a class="header" href="#running-the-sample-on-the-jpcsp-emulator">Running the sample on the JPCSP emulator</a></h3>
+<ol>
+<li>copy the 'export' folder to 'jpcsp\ms0\PSP\GAME\ChrisslyEngine_PSP'</li>
+<li>open JPCSP, then load the EBOOT.PBP with 'Load File' and press 'Run'</li>
+</ol>
+<h3 id="running-the-sample-on-the-ppsspp-emulator"><a class="header" href="#running-the-sample-on-the-ppsspp-emulator">Running the sample on the PPSSPP emulator</a></h3>
+<ol>
+<li>copy the 'export' folder to 'ppsspp_win\memstick\PSP\GAME\ChrisslyEngine_PSP'</li>
+<li>open PPSSPP, then load the EBOOT.PBP with 'File' -&gt; 'Open'</li>
+</ol>
+<h2 id="building-and-running-the-android-sample"><a class="header" href="#building-and-running-the-android-sample">Building, and running the android sample</a></h2>
+<h3 id="building-the-sample-2"><a class="header" href="#building-the-sample-2">Building the sample</a></h3>
+<ol>
+<li>edit 'android\ChrisslyEngine_Android\build.cmd'</li>
+<li>change 'NDK' variable to point to your NDK installation directory</li>
+<li>run 'build.cmd'</li>
+<li>run 'exportassets.cmd'</li>
+</ol>
+<h3 id="running-the-sample-with-eclipse-and-the-android-development-tool-adt"><a class="header" href="#running-the-sample-with-eclipse-and-the-android-development-tool-adt">Running the sample with Eclipse and the Android Development Tool (ADT)</a></h3>
+<ol>
+<li>install eclipse and adt as described here: <a href="http://developer.android.com/ndk/guides/setup.html">http://developer.android.com/ndk/guides/setup.html</a></li>
+<li>open eclipse</li>
+<li>'File' -&gt; 'Import' -&gt; 'Existing Projects into Workspace'</li>
+<li>select 'android\ChrisslyEngine_Android' and click 'Finish'</li>
+<li>right click the application in the project explorer 'Run As' -&gt; '1 Android Application'</li>
+</ol>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="quickstart.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="quickstart.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
@@ -238,5 +284,10 @@
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
     </body>
 </html>
