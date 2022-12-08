@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -30,7 +30,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -56,7 +56,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="overview.html">Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="quickstart.html"><strong aria-hidden="true">1.</strong> Quickstart</a></li><li class="chapter-item expanded affix "><li class="part-title">Documentation</li><li class="chapter-item expanded "><a href="toolchain.html"><strong aria-hidden="true">2.</strong> Toolchain</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="toolchain/blender.html"><strong aria-hidden="true">2.1.</strong> Blender</a></li><li class="chapter-item expanded "><a href="toolchain/rawtex_gimp_plugin.html"><strong aria-hidden="true">2.2.</strong> RAWTex Gimp Plugin</a></li><li class="chapter-item expanded "><a href="toolchain/gimp.html"><strong aria-hidden="true">2.3.</strong> Gimp</a></li><li class="chapter-item expanded "><a href="toolchain/cl_tools.html"><strong aria-hidden="true">2.4.</strong> Command line tools</a></li><li class="chapter-item expanded "><a href="toolchain/leveleditor.html"><strong aria-hidden="true">2.5.</strong> Leveleditor</a></li></ol></li><li class="chapter-item expanded "><a href="engine.html"><strong aria-hidden="true">3.</strong> Engine</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="engine/graphics.html"><strong aria-hidden="true">3.1.</strong> Graphics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="engine/graphics/mesh.html"><strong aria-hidden="true">3.1.1.</strong> Mesh-Format</a></li><li class="chapter-item expanded "><a href="engine/graphics/material.html"><strong aria-hidden="true">3.1.2.</strong> Material-Format</a></li><li class="chapter-item expanded "><a href="engine/graphics/texture.html"><strong aria-hidden="true">3.1.3.</strong> Texture-Format</a></li><li class="chapter-item expanded "><a href="engine/graphics/animation.html"><strong aria-hidden="true">3.1.4.</strong> Skeleton-Animation-Format</a></li><li class="chapter-item expanded "><a href="engine/graphics/cubemap.html"><strong aria-hidden="true">3.1.5.</strong> Cubemaps</a></li><li class="chapter-item expanded "><a href="engine/graphics/shadows.html"><strong aria-hidden="true">3.1.6.</strong> Shadows</a></li><li class="chapter-item expanded "><a href="engine/graphics/defaultshader.html"><strong aria-hidden="true">3.1.7.</strong> Built-in Default Shaders</a></li><li class="chapter-item expanded "><a href="engine/graphics/manual_mesh.html"><strong aria-hidden="true">3.1.8.</strong> Create mesh programmatically</a></li><li class="chapter-item expanded "><a href="engine/graphics/animation_system_gotchas.html"><strong aria-hidden="true">3.1.9.</strong> Animation System Gotchas</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -192,6 +192,10 @@
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="quickstart"><a class="header" href="#quickstart">Quickstart</a></h1>
+<h2 id="download"><a class="header" href="#download">Download</a></h2>
+<p>Download repository as zip <a href="https://bitbucket.org/evolver/chrisslyengine/downloads/">here</a> or clone it with the following command:</p>
+<pre><code class="language-bash">git clone https://bitbucket.org/evolver/chrisslyengine.git
+</code></pre>
 <h2 id="building-and-running-the-windows-sample"><a class="header" href="#building-and-running-the-windows-sample">Building, and running the windows sample</a></h2>
 <h3 id="building-the-sample"><a class="header" href="#building-the-sample">Building the sample</a></h3>
 <ol>
@@ -206,7 +210,7 @@
 <h2 id="building-and-running-the-psp-sample"><a class="header" href="#building-and-running-the-psp-sample">Building, and running the psp sample</a></h2>
 <h3 id="building-the-sample-1"><a class="header" href="#building-the-sample-1">Building the sample</a></h3>
 <ol>
-<li>install devkitPSP (see: <a href="http://devkitpro.org/wiki/Getting_Started/devkitPSP">http://devkitpro.org/wiki/Getting_Started/devkitPSP</a>)</li>
+<li>install <a href="http://devkitpro.org/wiki/Getting_Started/devkitPSP">devkitPSP</a></li>
 <li>open a commandline, goto 'chrisslyengine\psp' and run 'make' or open 'ChrisslyEngine_PSP.pnproj' and press 'ALT + 1'</li>
 <li>run 'psp\exportassets.cmd'</li>
 </ol>
@@ -214,7 +218,7 @@
 <ol>
 <li>create a new folder 'ms0:/PSP/GAME/ChrisslyEngine_PSP'</li>
 <li>copy the 'export' folder and the 'EBOOT.PBP' to the new folder</li>
-<li>use 'Half-Byte Loader' (see: <a href="http://wololo.net/hbl">http://wololo.net/hbl</a>) to execute, since the PBP is not signed</li>
+<li>use <a href="http://wololo.net/hbl">Half-Byte Loader</a> to execute, since the PBP is not signed</li>
 </ol>
 <h3 id="running-the-sample-on-the-jpcsp-emulator"><a class="header" href="#running-the-sample-on-the-jpcsp-emulator">Running the sample on the JPCSP emulator</a></h3>
 <ol>
@@ -236,12 +240,340 @@
 </ol>
 <h3 id="running-the-sample-with-eclipse-and-the-android-development-tool-adt"><a class="header" href="#running-the-sample-with-eclipse-and-the-android-development-tool-adt">Running the sample with Eclipse and the Android Development Tool (ADT)</a></h3>
 <ol>
-<li>install eclipse and adt as described here: <a href="http://developer.android.com/ndk/guides/setup.html">http://developer.android.com/ndk/guides/setup.html</a></li>
+<li>install eclipse and adt as described <a href="http://developer.android.com/ndk/guides/setup.html">here</a></li>
 <li>open eclipse</li>
 <li>'File' -&gt; 'Import' -&gt; 'Existing Projects into Workspace'</li>
 <li>select 'android\ChrisslyEngine_Android' and click 'Finish'</li>
 <li>right click the application in the project explorer 'Run As' -&gt; '1 Android Application'</li>
 </ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="toolchain"><a class="header" href="#toolchain">Toolchain</a></h1>
+<p>Internal and external tools used for working with the engine.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="blender"><a class="header" href="#blender">Blender</a></h1>
+<h3 id="install-addon"><a class="header" href="#install-addon">Install Addon</a></h3>
+<ol>
+<li>copy 'tools/blender/io_export_chrisslymesh.py' to 'C:\Program Files\Blender Foundation\Blender 3.1\3.1\scripts\addons'</li>
+<li>in Blender go to 'Edit -&gt; Preferences -&gt; Add-ons' and check 'Import-Export ChrisslyEngine-Mesh format(.mesh)'</li>
+</ol>
+<h3 id="export-directly-to-mesh-material-skeleton-and-tex-using-the-addon"><a class="header" href="#export-directly-to-mesh-material-skeleton-and-tex-using-the-addon">Export directly to (.mesh), (.material), (.skeleton) and (.tex) using the addon</a></h3>
+<ul>
+<li>textures will be exported in R8G8B8A8 format</li>
+<li>axis_conversion(to_forward='-Z', to_up='+Y') on static meshes and morph animations, but not on skeletal animations</li>
+<li>modifiers are not applied (to apply: 'Object Mode -&gt; Object -&gt; Apply -&gt; All Transforms')</li>
+<li>for a custom gpu program:
+<ol>
+<li>select material</li>
+<li>'Custom Properties -&gt; New'</li>
+<li>name the new property 'gpu_program' and select 'String' as type</li>
+<li>set value (like &quot;skybox.fx&quot;)</li>
+<li>after export your (.material) file will contain a line 'gpu_program &quot;skybox.fx&quot;' in the pass section</li>
+</ol>
+</li>
+</ul>
+<h3 id="export-to-obj-for-later-conversion-with-the-mesh-cl-tool"><a class="header" href="#export-to-obj-for-later-conversion-with-the-mesh-cl-tool">Export to &quot;obj&quot; for later conversion with the mesh cl tool</a></h3>
+<p>Options blender &quot;obj&quot; exporter for animations:</p>
+<ul>
+<li>'Animations'</li>
+<li>'Triangulate'</li>
+</ul>
+<h3 id="about-coordinate-systems"><a class="header" href="#about-coordinate-systems">About Coordinate Systems</a></h3>
+<p>Blender (forward is -Y and Up is +Z)</p>
+<pre><code class="language-cpp">+Z
+^    +Y
+|   /
+|  /
+| /
+|/
++--------&gt; +X
+</code></pre>
+<p>OpenGL Right-handed (forward is -Z and Up is +Y)</p>
+<pre><code class="language-cpp">+Y
+^    -Z
+|   /
+|  /
+| /
+|/
++--------&gt; +X
+</code></pre>
+<p>That's why the exporter transforms the vertices with axis_conversion(to_forward='-Z', to_up='+Y').</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rawtex-gimp-plugin"><a class="header" href="#rawtex-gimp-plugin">RAWTex Gimp Plugin</a></h1>
+<h3 id="install"><a class="header" href="#install">Install</a></h3>
+<ul>
+<li>get plugin <a href="https://github.com/hitchhikr/rawtex">here</a></li>
+<li>copy RAWTex.exe to C:\Users\username\AppData\Roaming\GIMP\2.10\plug-ins</li>
+</ul>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<ol>
+<li>'File -&gt; Export As...'</li>
+<li>'Select File Type (By Extension) -&gt; RAW Texture'</li>
+<li>'Save'</li>
+<li>choose options and 'OK'</li>
+</ol>
+<h4 id="windows"><a class="header" href="#windows">Windows</a></h4>
+<ul>
+<li>don't mirror image vertical (except for DXT1-5, the plugin mirrors the texture when exporting to Standard OpenGL)</li>
+<li>DXT Format: Standard OpenGL (otherwise colors are scrambled)</li>
+</ul>
+<h4 id="psp"><a class="header" href="#psp">PSP</a></h4>
+<ul>
+<li>mirror image vertical (Paint)</li>
+<li>DXT Format: PSP</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gimp"><a class="header" href="#gimp">Gimp</a></h1>
+<h3 id="add-alpha-channel"><a class="header" href="#add-alpha-channel">Add alpha channel</a></h3>
+<ul>
+<li>&quot;Colours -&gt; Colour to Alpha...&quot;</li>
+</ul>
+<h3 id="extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android"><a class="header" href="#extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android">Extract alpha to single png (useful when using a separate compressed texture for the alpha channel on android)</a></h3>
+<ol>
+<li>&quot;Colours -&gt; Components -&gt; Decompose...&quot; (&quot;RGBA&quot;, uncheck &quot;Decompose to Layers...&quot;)</li>
+<li>right click on image and &quot;Export As...&quot;</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-tools"><a class="header" href="#command-line-tools">Command line tools</a></h1>
+<h2 id="texturetool"><a class="header" href="#texturetool">Texturetool</a></h2>
+<h3 id="usage-1"><a class="header" href="#usage-1">Usage</a></h3>
+<h4 id="android-1"><a class="header" href="#android-1">Android</a></h4>
+<h5 id="how-to-use-etc1tool-to-export-compressed-textures"><a class="header" href="#how-to-use-etc1tool-to-export-compressed-textures">How to use etc1tool to export compressed textures</a></h5>
+<p>Export with pkm header and pass '-pkm' to hint texturetool to parse properties from pkm header:</p>
+<pre><code class="language-bash">etc1tool.exe mage.png
+texturetool.exe -pkm -data mage.pkm -out mage_etc1.tex
+</code></pre>
+<p>Or export only payload using '--encodeNoHeader' and explicitely pass properties:</p>
+<pre><code class="language-bash">etc1tool.exe mage.png --encodeNoHeader
+texturetool.exe -format PF_ETC1_RGB8 -width 256 -height 256 -data mage_etc1.raw -out mage_etc1.tex
+</code></pre>
+<h2 id="meshtool"><a class="header" href="#meshtool">Meshtool</a></h2>
+<h3 id="usage-2"><a class="header" href="#usage-2">Usage</a></h3>
+<h4 id="export-morph-animations-example"><a class="header" href="#export-morph-animations-example">Export morph animations example</a></h4>
+<pre><code class="language-bash">meshtool.exe -morphanim -length 3.0 -numKeys 31 -src %SrcFolder%\cerberus\cerberus_walk -dst %DstFolder%\cerberus_walk.mesh
+</code></pre>
+<p>For the call above the following filestructure is expected (this is how Blender's obj exporter outputs animations):</p>
+<pre><code class="language-bash">+-- cerberus
+|   +-- cerberus_walk1.obj    &lt;- starts with index 1 !
+|   +-- cerberus_walk2.obj
+|   +-- ...
+|   +-- cerberus_walk31.obj
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="leveleditor"><a class="header" href="#leveleditor">Leveleditor</a></h1>
+<p><img src="toolchain/../screenshots/leveleditor.jpg" alt="leveleditor" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
+<p>The engine consists of of the following subsystems:</p>
+<ul>
+<li>Core</li>
+<li>Graphics</li>
+<li>Audio</li>
+<li>Input</li>
+<li>Application</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="graphics-1"><a class="header" href="#graphics-1">Graphics</a></h1>
+<p>The subsystem responsible for rendering and animation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mesh-format"><a class="header" href="#mesh-format">Mesh-Format</a></h1>
+<pre><code class="language-cpp">Tag                         Bytes       Type
+M_MESH_BOUNDS               1           unsigned char
+  bounding-radius           4           float
+
+M_SUBMESH                   1           unsigned char
+  materialname-length       1           unsigned char
+  materialname-data         1 - 255     char
+  vertex-count              4           unsigned int
+  bytes-per-vertex          4           unsigned int
+  texture coordinates       8           float
+  color                     4           int
+  normal                    12          float
+  postition                 12          float
+
+M_ANIMATION                 1           unsigned char
+  anim-length               4           float
+
+M_ANIMATION_TRACK           1           unsigned char
+  handle(submesh-index)     1           unsigned char
+
+M_ANIMATION_MORPH_KEYFRAME  1           unsigned char
+  key-timestamp             4           float
+  vertex-count              4           unsigned int
+  bytes-per-vertex          4           unsigned int
+  texture coordinates       8           float
+  color                     4           int
+  normal                    12          float
+  postition                 12          float
+
+M_MESH_SKELETON_FILE        1           unsigned char
+  skeletonfilepath-length   1           unsigned char
+  skeletonfilepath-data     1 - 255     char
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="material-format"><a class="header" href="#material-format">Material-Format</a></h1>
+<pre><code class="language-cpp">material &quot;name&quot;
+{
+  pass
+  {
+      fog_override false
+      fog_override true &lt;red green blue start end&gt;
+
+      lighting on|off
+      emissive vertexcolour
+      emissive &lt;red green blue alpha&gt;
+      ambient vertexcolour
+      ambient &lt;red green blue alpha&gt;
+      diffuse vertexcolour
+      diffuse &lt;red green blue alpha&gt;
+      specular vertexcolour
+      specular &lt;red green blue alpha shininess&gt;
+
+      scene_blend one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+                  one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+      scene_blend fix fix &lt;red green blue&gt; &lt;red green blue&gt;
+
+      cull_hardware none|clockwise|anticlockwise
+
+      depth_check on|off
+      depth_write on|off
+
+      texture_unit
+      {
+          texture &quot;filename.tex&quot;
+          cubic_texture &quot;basefilename.tex&quot; // you'll have to provide the following 6 files: &quot;basefilename_px.tex&quot; &quot;basefilename_nx.tex&quot; &quot;basefilename_py.tex&quot; &quot;basefilename_ny.tex&quot; &quot;basefilename_pz.tex&quot; &quot;basefilename_nz.tex&quot;
+
+          colour_op replace|add|alpha_blend|decal alpha
+
+          filtering none|point|linear none|point|linear none|point|linear
+
+          scroll &lt;u&gt; &lt;v&gt;
+          scale &lt;u&gt; &lt;v&gt;
+
+          env_map spherical
+      }
+
+      gpu_program &quot;gpuprogramname&quot;
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="texture-format"><a class="header" href="#texture-format">Texture-Format</a></h1>
+<p>A texture file contains a header (see below) followed by the payload.</p>
+<pre><code class="language-cpp">Tag             Bytes       Type
+format          1           unsigned char
+width           2           unsigned short
+height          2           unsigned short
+numMipmaps      1           unsigned char
+swizzled        1           unsigned char
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="skeleton-animation-format"><a class="header" href="#skeleton-animation-format">Skeleton-Animation-Format</a></h1>
+<pre><code class="language-cpp">skeleton
+{
+    num_bones &lt;n&gt;
+    bone &quot;Bonename&quot;
+    {
+        index &lt;i&gt;
+        parent &lt;p&gt;
+        local_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
+        inv_model_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
+    }
+    bone &quot;AnotherBone&quot;
+    {
+        ...
+    }
+}
+
+animation &quot;Animationname&quot;
+{
+    length &lt;l&gt;
+    num_keyframes &lt;n&gt;
+    track &quot;Trackname&quot;
+    {
+        index &lt;i&gt;
+        key
+        {
+            time &lt;t&gt;
+            local_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
+        }
+        key
+        {
+            ...
+        }
+    }
+    track &quot;AnotherTrack&quot;
+    {
+        ...
+    }
+}
+animation &quot;AnotherAnimation&quot;
+{
+    ...
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cubemaps"><a class="header" href="#cubemaps">Cubemaps</a></h1>
+<p>Naming convention for the files:</p>
+<pre><code class="language-cpp">cubemap_px.tex
+cubemap_nx.tex
+cubemap_py.tex
+cubemap_ny.tex
+cubemap_pz.tex
+cubemap_nz.tex
+</code></pre>
+<p>Load cubemap:</p>
+<pre><code class="language-cpp">Texture* cubeMap = TextureManager::Instance()-&gt;Load(&quot;cubemap.tex&quot;, TEX_TYPE_CUBE_MAP);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shadows"><a class="header" href="#shadows">Shadows</a></h1>
+<h3 id="texture-based-shadows-current-limitations"><a class="header" href="#texture-based-shadows-current-limitations">Texture-based shadows current limitations</a></h3>
+<ul>
+<li>general
+<ul>
+<li>only a single spotlight can cast shadows</li>
+</ul>
+</li>
+<li>d3d11 rendersystem
+<ul>
+<li>skeletal animated entities can neither cast nor receive shadows</li>
+<li>morph animated entities can cast but not receive shadows</li>
+<li>shadowmap resolution: 1024x1024</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="built-in-default-shaders"><a class="header" href="#built-in-default-shaders">Built-in Default Shaders</a></h1>
+<p>Light attenuation:</p>
+<pre><code class="language-cpp">Formula: attenuation = 1.0f / (constant + linear * distance + quadratic * distance²)
+</code></pre>
+<p>Auto updated shader parameters:</p>
+<pre><code class="language-cpp">&quot;worldMatrix&quot;
+&quot;viewMatrix&quot;
+&quot;projectionMatrix&quot;
+&quot;worldViewProjMatrix&quot;
+&quot;textureMatrix&quot;
+&quot;morphWeight&quot;
+</code></pre>
+<p>Default light params matrix:</p>
+<pre><code class="language-cpp">[ posx    posy    posz        -           ] position
+[ diff.r  diff.g  diff.b      -           ] diffuse
+[ spec.r  spec.g  spec.b      shininess   ] spec
+[ const   linear  quadratic   range       ] attenuation
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="create-mesh-programmatically"><a class="header" href="#create-mesh-programmatically">Create mesh programmatically</a></h1>
+<pre><code class="language-cpp">Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
+SubMesh* subMesh = mesh-&gt;CreateSubMesh();
+HardwareVertexBuffer* vertexBuffer = CE_NEW HardwareVertexBuffer(3U, 36U, HBU_STATIC, false);
+void* buffer = vertexBuffer-&gt;Map();
+chrissly::graphics::Vertex vtxData[3U] =
+{
+    {0.0f, 0.0f, 0xffffffff, 0.0f, 0.0f, 1.0f, -0.5f , -0.5f, 0.0f},
+    {0.0f, 0.0f, 0xffffffff, 0.0f, 0.0f, 1.0f,  0.5f , -0.5f, 0.0f},
+    {0.0f, 0.0f, 0xffffffff, 0.0f, 0.0f, 1.0f,  0.0f ,  0.5f, 0.0f}
+};
+memcpy(buffer, vtxData, sizeof(vtxData));
+vertexBuffer-&gt;Unmap();
+subMesh-&gt;vertexData = CE_NEW VertexData(vertexBuffer);
+subMesh-&gt;SetMaterialName(&quot;green_material&quot;);
+subMesh-&gt;topology = PT_TRIANGLELIST;
+Entity* entity = SceneManager::Instance()-&gt;CreateEntity(&quot;mytrianglemesh&quot;);
+SceneNode* sceneNode-&gt;AttachObject(entity);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="animation-system-gotchas"><a class="header" href="#animation-system-gotchas">Animation System Gotchas</a></h1>
+<ul>
+<li>a mesh can have either morph or skeletal animation, but not both</li>
+<li>only one morphanimation (with hardcoded name &quot;default&quot;, get with: entity-&gt;GetAnimationState(&quot;default&quot;)) per mesh, blending multiple morphanimations is not supported</li>
+<li>bone rotations are blended as follows:</li>
+</ul>
+<pre><code class="language-cpp">Quaternion q1 = Quaternion::Slerp(Quaternion::IDENTITY, rotation1, weight1);
+Quaternion q2 = Quaternion::Slerp(Quaternion::IDENTITY, rotation2, weight2);
+Quaternion blendedQ = q1 * q2;
+</code></pre>
 
                     </main>
 
