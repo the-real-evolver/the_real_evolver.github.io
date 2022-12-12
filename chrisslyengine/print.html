@@ -135,6 +135,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="overview"><a class="header" href="#overview">Overview</a></h1>
+<p>ChrisslyEngine is a 3D-Rendering/Audio Engine for the Playstation Portable (PSP), Android devices and Windows written in C++.</p>
 <h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
 <h3 id="playstation-portable"><a class="header" href="#playstation-portable">Playstation Portable</a></h3>
 <p><img src="screenshots/screen_animationtest.png" alt="animationtest" />
@@ -275,6 +276,15 @@
 <li>'Animations'</li>
 <li>'Triangulate'</li>
 </ul>
+<h3 id="skeletal-animation-setup"><a class="header" href="#skeletal-animation-setup">Skeletal Animation Setup</a></h3>
+<p>In order to work correctly in the engine there are a few necessities when setting up the rig and animations:</p>
+<ul>
+<li>limit weights per vertex to 4 (in 'Weight Paint' mode: 'Weights -&gt; Limit Total')</li>
+<li>normalise weights so all weights of a vertex sum up to 1 (in 'Weight Paint' mode: 'Weights -&gt; Normalize All')</li>
+<li>in 'Pose Mode' set the bones transform mode to: &quot;Quaternion (WXYZ)&quot;</li>
+<li>apply transform if the mesh was moved</li>
+<li>always insert 'LocRot' to <code>all</code> channels (scale not supported)</li>
+</ul>
 <h3 id="about-coordinate-systems"><a class="header" href="#about-coordinate-systems">About Coordinate Systems</a></h3>
 <p>Blender (forward is -Y and Up is +Z)</p>
 <pre><code class="language-cpp">+Z
@@ -299,7 +309,7 @@
 <h3 id="install"><a class="header" href="#install">Install</a></h3>
 <ul>
 <li>get plugin <a href="https://github.com/hitchhikr/rawtex">here</a></li>
-<li>copy RAWTex.exe to C:\Users\username\AppData\Roaming\GIMP\2.10\plug-ins</li>
+<li>copy 'RAWTex.exe' to 'C:\Users\username\AppData\Roaming\GIMP\2.10\plug-ins'</li>
 </ul>
 <h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
 <ol>
@@ -337,7 +347,7 @@
 <pre><code class="language-bash">etc1tool.exe mage.png
 texturetool.exe -pkm -data mage.pkm -out mage_etc1.tex
 </code></pre>
-<p>Or export only payload using '--encodeNoHeader' and explicitely pass properties:</p>
+<p>Or only export payload using '--encodeNoHeader' and explicitly pass properties:</p>
 <pre><code class="language-bash">etc1tool.exe mage.png --encodeNoHeader
 texturetool.exe -format PF_ETC1_RGB8 -width 256 -height 256 -data mage_etc1.raw -out mage_etc1.tex
 </code></pre>
@@ -356,7 +366,7 @@ texturetool.exe -format PF_ETC1_RGB8 -width 256 -height 256 -data mage_etc1.raw 
 <div style="break-before: page; page-break-before: always;"></div><h1 id="leveleditor"><a class="header" href="#leveleditor">Leveleditor</a></h1>
 <p><img src="toolchain/../screenshots/leveleditor.jpg" alt="leveleditor" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
-<p>The engine consists of of the following subsystems:</p>
+<p>The engine consists of the following subsystems:</p>
 <ul>
 <li>Core</li>
 <li>Graphics</li>

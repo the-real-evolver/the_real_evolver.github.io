@@ -160,6 +160,15 @@
 <li>'Animations'</li>
 <li>'Triangulate'</li>
 </ul>
+<h3 id="skeletal-animation-setup"><a class="header" href="#skeletal-animation-setup">Skeletal Animation Setup</a></h3>
+<p>In order to work correctly in the engine there are a few necessities when setting up the rig and animations:</p>
+<ul>
+<li>limit weights per vertex to 4 (in 'Weight Paint' mode: 'Weights -&gt; Limit Total')</li>
+<li>normalise weights so all weights of a vertex sum up to 1 (in 'Weight Paint' mode: 'Weights -&gt; Normalize All')</li>
+<li>in 'Pose Mode' set the bones transform mode to: &quot;Quaternion (WXYZ)&quot;</li>
+<li>apply transform if the mesh was moved</li>
+<li>always insert 'LocRot' to <code>all</code> channels (scale not supported)</li>
+</ul>
 <h3 id="about-coordinate-systems"><a class="header" href="#about-coordinate-systems">About Coordinate Systems</a></h3>
 <p>Blender (forward is -Y and Up is +Z)</p>
 <pre><code class="language-cpp">+Z
