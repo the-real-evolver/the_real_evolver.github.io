@@ -135,14 +135,29 @@
                     <main>
                         <h1 id="animation-system-gotchas"><a class="header" href="#animation-system-gotchas">Animation System Gotchas</a></h1>
 <ul>
+<li>general
+<ul>
 <li>a mesh can have either morph or skeletal animation, but not both</li>
 <li>only one morphanimation (with hardcoded name &quot;default&quot;, get with: entity-&gt;GetAnimationState(&quot;default&quot;)) per mesh, blending multiple morphanimations is not supported</li>
-<li>bone rotations are blended as follows:</li>
-</ul>
+<li>bone rotations are blended as follows:
 <pre><code class="language-cpp">Quaternion q1 = Quaternion::Slerp(Quaternion::IDENTITY, rotation1, weight1);
 Quaternion q2 = Quaternion::Slerp(Quaternion::IDENTITY, rotation2, weight2);
 Quaternion blendedQ = q1 * q2;
 </code></pre>
+</li>
+</ul>
+</li>
+<li>d3d11 rendersystem
+<ul>
+<li>maximum number of bones per skeleton: 32</li>
+</ul>
+</li>
+<li>psp rendersystem
+<ul>
+<li>maximum number of bones per skeleton: 8 (limited by the hardware)</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 

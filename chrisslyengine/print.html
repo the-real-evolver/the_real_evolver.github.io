@@ -145,7 +145,7 @@
 <h2 id="features"><a class="header" href="#features">Features</a></h2>
 <h3 id="platform-support"><a class="header" href="#platform-support">Platform Support</a></h3>
 <ul>
-<li>Playstation Portable</li>
+<li>Playstation Portable (PSP)</li>
 <li>Android</li>
 <li>Windows</li>
 </ul>
@@ -273,8 +273,8 @@
 <h3 id="export-to-obj-for-later-conversion-with-the-mesh-cl-tool"><a class="header" href="#export-to-obj-for-later-conversion-with-the-mesh-cl-tool">Export to &quot;obj&quot; for later conversion with the mesh cl tool</a></h3>
 <p>Options blender &quot;obj&quot; exporter for animations:</p>
 <ul>
-<li>'Animations'</li>
-<li>'Triangulate'</li>
+<li>'Export Animation'</li>
+<li>'Triangulated Mesh'</li>
 </ul>
 <h3 id="skeletal-animation-setup"><a class="header" href="#skeletal-animation-setup">Skeletal Animation Setup</a></h3>
 <p>In order to work correctly in the engine there are a few necessities when setting up the rig and animations:</p>
@@ -536,6 +536,11 @@ cubemap_nz.tex
 <li>shadowmap resolution: 1024x1024</li>
 </ul>
 </li>
+<li>psp rendersystem
+<ul>
+<li>shadowmap resolution: 256x256</li>
+</ul>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="built-in-default-shaders"><a class="header" href="#built-in-default-shaders">Built-in Default Shaders</a></h1>
 <p>Light attenuation:</p>
@@ -576,14 +581,29 @@ SceneNode* sceneNode-&gt;AttachObject(entity);
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="animation-system-gotchas"><a class="header" href="#animation-system-gotchas">Animation System Gotchas</a></h1>
 <ul>
+<li>general
+<ul>
 <li>a mesh can have either morph or skeletal animation, but not both</li>
 <li>only one morphanimation (with hardcoded name &quot;default&quot;, get with: entity-&gt;GetAnimationState(&quot;default&quot;)) per mesh, blending multiple morphanimations is not supported</li>
-<li>bone rotations are blended as follows:</li>
-</ul>
+<li>bone rotations are blended as follows:
 <pre><code class="language-cpp">Quaternion q1 = Quaternion::Slerp(Quaternion::IDENTITY, rotation1, weight1);
 Quaternion q2 = Quaternion::Slerp(Quaternion::IDENTITY, rotation2, weight2);
 Quaternion blendedQ = q1 * q2;
 </code></pre>
+</li>
+</ul>
+</li>
+<li>d3d11 rendersystem
+<ul>
+<li>maximum number of bones per skeleton: 32</li>
+</ul>
+</li>
+<li>psp rendersystem
+<ul>
+<li>maximum number of bones per skeleton: 8 (limited by the hardware)</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
