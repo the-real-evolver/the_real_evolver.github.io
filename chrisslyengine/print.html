@@ -386,7 +386,7 @@ M_SUBMESH                   1           unsigned char
   materialname-data         1 - 255     char
   vertex-count              4           unsigned int
   bytes-per-vertex          4           unsigned int
-  texture coordinates       8           float
+  texture-coordinates       8           float
   color                     4           int
   normal                    12          float
   postition                 12          float
@@ -401,7 +401,7 @@ M_ANIMATION_MORPH_KEYFRAME  1           unsigned char
   key-timestamp             4           float
   vertex-count              4           unsigned int
   bytes-per-vertex          4           unsigned int
-  texture coordinates       8           float
+  texture-coordinates       8           float
   color                     4           int
   normal                    12          float
   postition                 12          float
@@ -462,7 +462,7 @@ M_MESH_SKELETON_FILE        1           unsigned char
 format          1           unsigned char
 width           2           unsigned short
 height          2           unsigned short
-numMipmaps      1           unsigned char
+num-mipmaps     1           unsigned char
 swizzled        1           unsigned char
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="skeleton-animation-format"><a class="header" href="#skeleton-animation-format">Skeleton-Animation-Format</a></h1>
@@ -561,9 +561,7 @@ cubemap_nz.tex
 [ const   linear  quadratic   range       ] attenuation
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-mesh-programmatically"><a class="header" href="#create-mesh-programmatically">Create mesh programmatically</a></h1>
-<pre><code class="language-cpp">Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
-SubMesh* subMesh = mesh-&gt;CreateSubMesh();
-HardwareVertexBuffer* vertexBuffer = CE_NEW HardwareVertexBuffer(3U, 36U, HBU_STATIC, false);
+<pre><code class="language-cpp">HardwareVertexBuffer* vertexBuffer = CE_NEW HardwareVertexBuffer(3U, 36U, HBU_STATIC, false);
 void* buffer = vertexBuffer-&gt;Map();
 chrissly::graphics::Vertex vtxData[3U] =
 {
@@ -573,11 +571,13 @@ chrissly::graphics::Vertex vtxData[3U] =
 };
 memcpy(buffer, vtxData, sizeof(vtxData));
 vertexBuffer-&gt;Unmap();
+Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
+SubMesh* subMesh = mesh-&gt;CreateSubMesh();
 subMesh-&gt;vertexData = CE_NEW VertexData(vertexBuffer);
 subMesh-&gt;SetMaterialName(&quot;green_material&quot;);
 subMesh-&gt;topology = PT_TRIANGLELIST;
 Entity* entity = SceneManager::Instance()-&gt;CreateEntity(&quot;mytrianglemesh&quot;);
-SceneNode* sceneNode-&gt;AttachObject(entity);
+sceneNode-&gt;AttachObject(entity);
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="animation-system-gotchas"><a class="header" href="#animation-system-gotchas">Animation System Gotchas</a></h1>
 <ul>
@@ -595,7 +595,7 @@ Quaternion blendedQ = q1 * q2;
 </li>
 <li>d3d11 rendersystem
 <ul>
-<li>maximum number of bones per skeleton: 32</li>
+<li>maximum number of bones per skeleton: 40</li>
 </ul>
 </li>
 <li>psp rendersystem

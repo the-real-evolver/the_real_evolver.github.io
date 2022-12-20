@@ -134,9 +134,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="create-mesh-programmatically"><a class="header" href="#create-mesh-programmatically">Create mesh programmatically</a></h1>
-<pre><code class="language-cpp">Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
-SubMesh* subMesh = mesh-&gt;CreateSubMesh();
-HardwareVertexBuffer* vertexBuffer = CE_NEW HardwareVertexBuffer(3U, 36U, HBU_STATIC, false);
+<pre><code class="language-cpp">HardwareVertexBuffer* vertexBuffer = CE_NEW HardwareVertexBuffer(3U, 36U, HBU_STATIC, false);
 void* buffer = vertexBuffer-&gt;Map();
 chrissly::graphics::Vertex vtxData[3U] =
 {
@@ -146,11 +144,13 @@ chrissly::graphics::Vertex vtxData[3U] =
 };
 memcpy(buffer, vtxData, sizeof(vtxData));
 vertexBuffer-&gt;Unmap();
+Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
+SubMesh* subMesh = mesh-&gt;CreateSubMesh();
 subMesh-&gt;vertexData = CE_NEW VertexData(vertexBuffer);
 subMesh-&gt;SetMaterialName(&quot;green_material&quot;);
 subMesh-&gt;topology = PT_TRIANGLELIST;
 Entity* entity = SceneManager::Instance()-&gt;CreateEntity(&quot;mytrianglemesh&quot;);
-SceneNode* sceneNode-&gt;AttachObject(entity);
+sceneNode-&gt;AttachObject(entity);
 </code></pre>
 
                     </main>
