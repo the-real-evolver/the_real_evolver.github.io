@@ -284,6 +284,7 @@
 <li>in 'Pose Mode' set the bones transform mode to: &quot;Quaternion (WXYZ)&quot;</li>
 <li>apply transform if the mesh was moved</li>
 <li>always insert 'LocRot' to <code>all</code> channels (scale not supported)</li>
+<li>to add an animation just create a new Action</li>
 </ul>
 <h3 id="about-coordinate-systems"><a class="header" href="#about-coordinate-systems">About Coordinate Systems</a></h3>
 <p>Blender (forward is -Y and Up is +Z)</p>
@@ -386,6 +387,7 @@ M_SUBMESH                   1           unsigned char
   materialname-data         1 - 255     char
   vertex-count              4           unsigned int
   bytes-per-vertex          4           unsigned int
+  bone-weights              16          float           // only skeletal animation
   texture-coordinates       8           float
   color                     4           int
   normal                    12          float
