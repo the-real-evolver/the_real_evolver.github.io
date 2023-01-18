@@ -533,8 +533,7 @@ cubemap_nz.tex
 </li>
 <li>d3d11 rendersystem
 <ul>
-<li>skeletal animated entities can neither cast nor receive shadows</li>
-<li>morph animated entities can cast but not receive shadows</li>
+<li>skeletal or morph animated entities can cast but not receive shadows</li>
 <li>shadowmap resolution: 1024x1024</li>
 </ul>
 </li>
@@ -557,7 +556,7 @@ cubemap_nz.tex
 &quot;morphWeight&quot;
 </code></pre>
 <p>Default light params matrix:</p>
-<pre><code class="language-cpp">[ posx    posy    posz        -           ] position
+<pre><code class="language-plaintext">[ posx    posy    posz        -           ] position
 [ diff.r  diff.g  diff.b      -           ] diffuse
 [ spec.r  spec.g  spec.b      shininess   ] spec
 [ const   linear  quadratic   range       ] attenuation
