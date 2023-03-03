@@ -652,7 +652,7 @@ sceneNode-&gt;AttachObject(entity);
 &quot;void DefaultFragmentShader(VertexOut input, out float4 output : SV_Target)\n&quot;
 &quot;{\n&quot;
 &quot;    float4 colour = texture0.Sample(samplerLinear, float2(input.uv.x, 1.0f - input.uv.y));\n&quot;
-&quot;    float grey = (colour.r + colour.b + colour.g) * 0.3333f;\n&quot;
+&quot;    float grey = 0.299f * colour.r + 0.587f * colour.g + 0.114f * colour.b;\n&quot;
 &quot;    output = float4(grey, grey, grey, 1.0f);\n&quot;
 &quot;};\n&quot;;
 </code></pre>
@@ -695,8 +695,10 @@ RenderSystem::Instance()-&gt;SetRenderTarget(window);
 RenderSystem::Instance()-&gt;SetViewport(window-&gt;GetViewport(0U));
 // set pass that applies posteffect and render full-screen triangle
 RenderSystem::Instance()-&gt;SetPass(postfx_pass);
-RenderSystem::Instance()-&gt;Render(fs_triangle-&gt;GetSubEntity(0u));
+RenderSystem::Instance()-&gt;Render(fs_triangle-&gt;GetSubEntity(0U));
 window-&gt;SwapBuffers();
+// manually raise frame number to update animations
+GraphicsSystem::Instance()-&gt;RaiseFrameNumber();
 </code></pre>
 
                     </main>
