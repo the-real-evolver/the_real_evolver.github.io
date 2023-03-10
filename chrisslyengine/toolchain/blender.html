@@ -190,6 +190,20 @@
 +--------&gt; +X
 </code></pre>
 <p>That's why the exporter transforms the vertices with axis_conversion(to_forward='-Z', to_up='+Y').</p>
+<h3 id="separate-mesh-into-equal-chunks-by-a-grid"><a class="header" href="#separate-mesh-into-equal-chunks-by-a-grid">Separate mesh into equal chunks by a grid</a></h3>
+<p>This comes in handy to split large meshes like terrains in to smaller pieces for culling and coarse collision detection.</p>
+<ol>
+<li>'Object Mode -&gt; Add -&gt; Mesh -&gt; Grid'</li>
+<li>delete faces of the grid 'Edit Mode -&gt; Mesh -&gt; Delete -&gt; Only Faces'</li>
+<li>in 'Edge Select' mode, extrude grid with 'E' in -Z direction to create a shape we can cookie-cut our mesh with </li>
+<li>'Object Mode' select all (the mesh and the grid) and press 'Ctrl + J' to join</li>
+<li>'Edit Mode' select corner of the grid a press 'L'</li>
+<li>'Face -&gt; Intersect(Knife)'</li>
+<li>'Mesh -&gt; Split -&gt; Faces by Edges'</li>
+<li>'Mesh -&gt; Separate -&gt; By Loose Parts' will create separate objects</li>
+<li>remove leftovers from the grid</li>
+<li>in the exporter check the 'Objects as separate files' option</li>
+</ol>
 
                     </main>
 
