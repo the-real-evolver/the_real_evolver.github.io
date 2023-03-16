@@ -313,7 +313,7 @@
 <li>delete faces of the grid 'Edit Mode -&gt; Mesh -&gt; Delete -&gt; Only Faces'</li>
 <li>in 'Edge Select' mode, extrude grid with 'E' in -Z direction to create a shape we can cookie-cut our mesh with </li>
 <li>'Object Mode' select all (the mesh and the grid) and press 'Ctrl + J' to join</li>
-<li>'Edit Mode' select corner of the grid a press 'L'</li>
+<li>'Edit Mode' select corner of the grid and press 'L'</li>
 <li>'Face -&gt; Intersect(Knife)'</li>
 <li>'Mesh -&gt; Split -&gt; Faces by Edges'</li>
 <li>'Mesh -&gt; Separate -&gt; By Loose Parts' will create separate objects</li>
@@ -394,6 +394,7 @@ texturetool.exe -format PF_ETC1_RGB8 -width 256 -height 256 -data mage_etc1.raw 
 <div style="break-before: page; page-break-before: always;"></div><h1 id="mesh-format"><a class="header" href="#mesh-format">Mesh-Format</a></h1>
 <pre><code class="language-cpp">Tag                         Bytes       Type
 M_MESH_BOUNDS               1           unsigned char
+  bounding-center           12          float
   bounding-radius           4           float
 
 M_SUBMESH                   1           unsigned char
