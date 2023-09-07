@@ -144,7 +144,8 @@ M_SUBMESH                   1           unsigned char
   materialname-data         1 - 255     char
   vertex-count              4           unsigned int
   bytes-per-vertex          4           unsigned int
-  bone-weights              16          float           // only skeletal animation
+  bone-weights              16 - 32     float           // only skeletal animation (psp can have up to eight weights)
+  bone-indices              16          unsigned int    // only skeletal animation (d3d11 and gles2 rendersystem)
   texture-coordinates       8           float
   color                     4           int
   normal                    12          float
