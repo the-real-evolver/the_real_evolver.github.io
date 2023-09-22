@@ -140,8 +140,8 @@
 <li>a mesh can have either morph or skeletal animation, but not both</li>
 <li>only one morphanimation (with hardcoded name &quot;default&quot;, get with: entity-&gt;GetAnimationState(&quot;default&quot;)) per mesh, blending multiple morphanimations is not supported</li>
 <li>bone rotations are blended as follows:
-<pre><code class="language-cpp">Quaternion q1 = Quaternion::Slerp(Quaternion::IDENTITY, rotation1, weight1);
-Quaternion q2 = Quaternion::Slerp(Quaternion::IDENTITY, rotation2, weight2);
+<pre><code class="language-cpp">Quaternion q1 = Quaternion::Nlerp(Quaternion::IDENTITY, rotation1, weight1);
+Quaternion q2 = Quaternion::Nlerp(Quaternion::IDENTITY, rotation2, weight2);
 Quaternion blendedQ = q1 * q2;
 </code></pre>
 </li>
