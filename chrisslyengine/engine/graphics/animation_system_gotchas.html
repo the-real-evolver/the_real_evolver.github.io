@@ -147,14 +147,16 @@ Quaternion blendedQ = q1 * q2;
 </li>
 </ul>
 </li>
-<li>d3d11 rendersystem
+<li>d3d11 and gles2 rendersystem
 <ul>
 <li>maximum number of bones per skeleton: 40</li>
+<li>uses <a href="https://learn.microsoft.com/de-de/windows/win32/direct3d9/indexed-vertex-blending">indexed vertex blending</a></li>
 </ul>
 </li>
 <li>psp rendersystem
 <ul>
 <li>maximum number of bones per skeleton: 8 (limited by the hardware)</li>
+<li>no indexed vertex blending (not supported by the hardware)</li>
 </ul>
 </li>
 </ul>
