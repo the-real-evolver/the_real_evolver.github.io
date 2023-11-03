@@ -379,7 +379,31 @@ texturetool.exe -format PF_ETC1_RGB8 -width 256 -height 256 -data mage_etc1.raw 
 <div style="break-before: page; page-break-before: always;"></div><h1 id="leveleditor-wip"><a class="header" href="#leveleditor-wip">Leveleditor (WIP)</a></h1>
 <p><img src="toolchain/../screenshots/leveleditor.jpg" alt="leveleditor" />
 Comming soon!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
+<h3 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h3>
+<p>The first thing to do is to create a folder named 'export' in your project directory. This is the root directory for your assets. If you export a mesh from Blender the addon exports all filepaths (for example a .tex file referenced in a .material file) relative to the 'export' folder.</p>
+<h3 id="exporting-assets-from-blender"><a class="header" href="#exporting-assets-from-blender">Exporting assets from Blender</a></h3>
+<p>In Blender go to 'File -&gt; Export -&gt; ChrisslyEngine-Mesh (.mesh)'. Select the 'export' folder (or any subfolder of it), check any options you wish, and click 'Export ChrisslyEngine-Mesh'.</p>
+<h3 id="creating-a-level"><a class="header" href="#creating-a-level">Creating a level</a></h3>
+<p>Go to 'File -&gt; New Level'.</p>
+<h4 id="adding-entities"><a class="header" href="#adding-entities">Adding entities</a></h4>
+<p>Right click a SceneNode in the World Outliner and choose 'Add Entity'. This opens the asset root directory ('export'). Double click the .mesh file you want load or select it and click 'OK'. Press 'F' to focus the entity.</p>
+<h4 id="adding-lights"><a class="header" href="#adding-lights">Adding lights</a></h4>
+<p>Right click 'Lights' in the World Outliner and choose 'Create Light'.</p>
+<h4 id="adding-collision-geometry"><a class="header" href="#adding-collision-geometry">Adding collision geometry</a></h4>
+<p>Right click 'Static Collision' in the World Outliner and choose 'Add Collision Mesh'.</p>
+<h3 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
+<tr><td>Del</td><td>delete selected Entity, Scenenode, Light or Collision Mesh</td></tr>
+<tr><td>LCtrl + S</td><td>save current level</td></tr>
+<tr><td>F</td><td>focus camera on selected object in the World Outliner</td></tr>
+<tr><td>RAlt + P</td><td>play</td></tr>
+</tbody></table>
+</div>
+<h3 id="gamepad-shortcuts"><a class="header" href="#gamepad-shortcuts">Gamepad Shortcuts</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Button</th><th>Action</th></tr></thead><tbody>
+<tr><td>Start</td><td>play</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
 <p>The engine consists of the following subsystems:</p>
 <ul>
 <li>Core</li>
