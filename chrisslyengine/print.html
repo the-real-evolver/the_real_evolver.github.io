@@ -403,7 +403,75 @@ Comming soon!</p>
 <div class="table-wrapper"><table><thead><tr><th>Button</th><th>Action</th></tr></thead><tbody>
 <tr><td>Start</td><td>play</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
+</div>
+<h3 id="level-format"><a class="header" href="#level-format">Level-Format</a></h3>
+<pre><code class="language-cpp">world_settings
+{
+    shadow_technique none|texture
+    shadow_colour &quot;0xe9e0cd&quot;
+}
+
+materials
+{
+    &quot;dir/name.material&quot;
+    &quot;dir/another.material&quot;
+    ...
+}
+
+node // this is the root node &quot;current_level&quot;
+{
+    position &lt;x y z&gt;
+    orientation &lt;x y z w&gt;
+    scale &lt;x y z&gt;
+    entity
+    {
+        mesh &quot;dir/name.mesh&quot;
+        cast_shadows true|false
+        receives_shadows true|false
+        cull_frustum false
+        animation &quot;AnimationName&quot;
+        {
+            enable true|false
+            loop true|false
+            weight &lt;f&gt;
+        }
+        animation &quot;AnotherAnimation&quot;
+        {
+            ...
+        }
+    }
+    entity
+    {
+        ...
+    }
+    node
+    {
+        ...
+    }
+}
+
+light
+{
+    type point|directional|spot
+    position &lt;x y z&gt;
+    direction &lt;x y z&gt;
+    diffuse &quot;0xffffffff&quot;
+    specular &quot;0x0&quot;
+    attenuation &lt;range constant linear quadradic&gt;
+}
+
+collision
+{
+    &quot;dir/name.mesh&quot;
+}
+
+game
+{
+    spawn_point &lt;x y z&gt;
+    spawn_velocity &lt;x y z&gt;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="engine"><a class="header" href="#engine">Engine</a></h1>
 <p>The engine consists of the following subsystems:</p>
 <ul>
 <li>Core</li>
@@ -454,47 +522,47 @@ M_MESH_SKELETON_FILE        1           unsigned char
 <div style="break-before: page; page-break-before: always;"></div><h1 id="material-format"><a class="header" href="#material-format">Material-Format</a></h1>
 <pre><code class="language-cpp">material &quot;name&quot;
 {
-  pass
-  {
-      fog_override false
-      fog_override true &lt;red green blue start end&gt;
+    pass
+    {
+        fog_override false
+        fog_override true &lt;red green blue start end&gt;
 
-      lighting on|off
-      emissive vertexcolour
-      emissive &lt;red green blue alpha&gt;
-      ambient vertexcolour
-      ambient &lt;red green blue alpha&gt;
-      diffuse vertexcolour
-      diffuse &lt;red green blue alpha&gt;
-      specular vertexcolour
-      specular &lt;red green blue alpha shininess&gt;
+        lighting on|off
+        emissive vertexcolour
+        emissive &lt;red green blue alpha&gt;
+        ambient vertexcolour
+        ambient &lt;red green blue alpha&gt;
+        diffuse vertexcolour
+        diffuse &lt;red green blue alpha&gt;
+        specular vertexcolour
+        specular &lt;red green blue alpha shininess&gt;
 
-      scene_blend one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
-                  one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
-      scene_blend fix fix &lt;red green blue&gt; &lt;red green blue&gt;
+        scene_blend one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+                    one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+        scene_blend fix fix &lt;red green blue&gt; &lt;red green blue&gt;
 
-      cull_hardware none|clockwise|anticlockwise
+        cull_hardware none|clockwise|anticlockwise
 
-      depth_check on|off
-      depth_write on|off
+        depth_check on|off
+        depth_write on|off
 
-      texture_unit
-      {
-          texture &quot;filename.tex&quot;
-          cubic_texture &quot;basefilename.tex&quot; // you'll have to provide the following 6 files: &quot;basefilename_px.tex&quot; &quot;basefilename_nx.tex&quot; &quot;basefilename_py.tex&quot; &quot;basefilename_ny.tex&quot; &quot;basefilename_pz.tex&quot; &quot;basefilename_nz.tex&quot;
+        texture_unit
+        {
+            texture &quot;filename.tex&quot;
+            cubic_texture &quot;basefilename.tex&quot; // you'll have to provide the following 6 files: &quot;basefilename_px.tex&quot; &quot;basefilename_nx.tex&quot; &quot;basefilename_py.tex&quot; &quot;basefilename_ny.tex&quot; &quot;basefilename_pz.tex&quot; &quot;basefilename_nz.tex&quot;
 
-          colour_op replace|modulate|add|alpha_blend|decal alpha|colour
+            colour_op replace|modulate|add|alpha_blend|decal alpha|colour
 
-          filtering none|point|linear none|point|linear none|point|linear
+            filtering none|point|linear none|point|linear none|point|linear
 
-          scroll &lt;u&gt; &lt;v&gt;
-          scale &lt;u&gt; &lt;v&gt;
+            scroll &lt;u&gt; &lt;v&gt;
+            scale &lt;u&gt; &lt;v&gt;
 
-          env_map spherical
-      }
+            env_map spherical
+        }
 
-      gpu_program &quot;gpuprogramname&quot;
-  }
+        gpu_program &quot;gpuprogramname&quot;
+    }
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="texture-format"><a class="header" href="#texture-format">Texture-Format</a></h1>
@@ -715,7 +783,7 @@ vp-&gt;SetBackgroundColour(0xff242424);
 TextureUnitState* tus = postfx_pass-&gt;CreateTextureUnitState();
 Texture* rt_texture = new Texture(scene_rt);
 tus-&gt;SetTexture(rt_texture);
-GpuProgram* postfx_gpu_program = GpuProgramManager::Instance()-&gt;LoadFromSource(PostFxGpuProgram, &quot;postfx.fx&quot;, &quot;DefaultVertexShader&quot;, &quot;DefaultFragmentShader&quot;);
+GpuProgram* postfx_gpu_program = GpuProgramManager::Instance()-&gt;LoadFromSource(&quot;postfx.fx&quot;, PostFxGpuProgram, &quot;DefaultVertexShader&quot;, &quot;DefaultFragmentShader&quot;);
 postfx_pass-&gt;SetGpuProgram(postfx_gpu_program);
 </code></pre>
 <p>The last step of the initialisation is to create the triangle mesh:</p>

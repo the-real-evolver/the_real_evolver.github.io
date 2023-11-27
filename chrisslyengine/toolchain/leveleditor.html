@@ -161,6 +161,74 @@ Comming soon!</p>
 <tr><td>Start</td><td>play</td></tr>
 </tbody></table>
 </div>
+<h3 id="level-format"><a class="header" href="#level-format">Level-Format</a></h3>
+<pre><code class="language-cpp">world_settings
+{
+    shadow_technique none|texture
+    shadow_colour &quot;0xe9e0cd&quot;
+}
+
+materials
+{
+    &quot;dir/name.material&quot;
+    &quot;dir/another.material&quot;
+    ...
+}
+
+node // this is the root node &quot;current_level&quot;
+{
+    position &lt;x y z&gt;
+    orientation &lt;x y z w&gt;
+    scale &lt;x y z&gt;
+    entity
+    {
+        mesh &quot;dir/name.mesh&quot;
+        cast_shadows true|false
+        receives_shadows true|false
+        cull_frustum false
+        animation &quot;AnimationName&quot;
+        {
+            enable true|false
+            loop true|false
+            weight &lt;f&gt;
+        }
+        animation &quot;AnotherAnimation&quot;
+        {
+            ...
+        }
+    }
+    entity
+    {
+        ...
+    }
+    node
+    {
+        ...
+    }
+}
+
+light
+{
+    type point|directional|spot
+    position &lt;x y z&gt;
+    direction &lt;x y z&gt;
+    diffuse &quot;0xffffffff&quot;
+    specular &quot;0x0&quot;
+    attenuation &lt;range constant linear quadradic&gt;
+}
+
+collision
+{
+    &quot;dir/name.mesh&quot;
+}
+
+game
+{
+    spawn_point &lt;x y z&gt;
+    spawn_velocity &lt;x y z&gt;
+}
+</code></pre>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

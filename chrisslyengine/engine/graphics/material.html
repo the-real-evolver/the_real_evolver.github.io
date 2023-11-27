@@ -136,47 +136,47 @@
                         <h1 id="material-format"><a class="header" href="#material-format">Material-Format</a></h1>
 <pre><code class="language-cpp">material &quot;name&quot;
 {
-  pass
-  {
-      fog_override false
-      fog_override true &lt;red green blue start end&gt;
+    pass
+    {
+        fog_override false
+        fog_override true &lt;red green blue start end&gt;
 
-      lighting on|off
-      emissive vertexcolour
-      emissive &lt;red green blue alpha&gt;
-      ambient vertexcolour
-      ambient &lt;red green blue alpha&gt;
-      diffuse vertexcolour
-      diffuse &lt;red green blue alpha&gt;
-      specular vertexcolour
-      specular &lt;red green blue alpha shininess&gt;
+        lighting on|off
+        emissive vertexcolour
+        emissive &lt;red green blue alpha&gt;
+        ambient vertexcolour
+        ambient &lt;red green blue alpha&gt;
+        diffuse vertexcolour
+        diffuse &lt;red green blue alpha&gt;
+        specular vertexcolour
+        specular &lt;red green blue alpha shininess&gt;
 
-      scene_blend one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
-                  one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
-      scene_blend fix fix &lt;red green blue&gt; &lt;red green blue&gt;
+        scene_blend one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+                    one|zero|dest_colour|src_colour|one_minus_dest_colour|one_minus_src_colour|dest_alpha|src_alpha|one_minus_dest_alpha|one_minus_src_alpha
+        scene_blend fix fix &lt;red green blue&gt; &lt;red green blue&gt;
 
-      cull_hardware none|clockwise|anticlockwise
+        cull_hardware none|clockwise|anticlockwise
 
-      depth_check on|off
-      depth_write on|off
+        depth_check on|off
+        depth_write on|off
 
-      texture_unit
-      {
-          texture &quot;filename.tex&quot;
-          cubic_texture &quot;basefilename.tex&quot; // you'll have to provide the following 6 files: &quot;basefilename_px.tex&quot; &quot;basefilename_nx.tex&quot; &quot;basefilename_py.tex&quot; &quot;basefilename_ny.tex&quot; &quot;basefilename_pz.tex&quot; &quot;basefilename_nz.tex&quot;
+        texture_unit
+        {
+            texture &quot;filename.tex&quot;
+            cubic_texture &quot;basefilename.tex&quot; // you'll have to provide the following 6 files: &quot;basefilename_px.tex&quot; &quot;basefilename_nx.tex&quot; &quot;basefilename_py.tex&quot; &quot;basefilename_ny.tex&quot; &quot;basefilename_pz.tex&quot; &quot;basefilename_nz.tex&quot;
 
-          colour_op replace|modulate|add|alpha_blend|decal alpha|colour
+            colour_op replace|modulate|add|alpha_blend|decal alpha|colour
 
-          filtering none|point|linear none|point|linear none|point|linear
+            filtering none|point|linear none|point|linear none|point|linear
 
-          scroll &lt;u&gt; &lt;v&gt;
-          scale &lt;u&gt; &lt;v&gt;
+            scroll &lt;u&gt; &lt;v&gt;
+            scale &lt;u&gt; &lt;v&gt;
 
-          env_map spherical
-      }
+            env_map spherical
+        }
 
-      gpu_program &quot;gpuprogramname&quot;
-  }
+        gpu_program &quot;gpuprogramname&quot;
+    }
 }
 </code></pre>
 

@@ -175,7 +175,7 @@ vp-&gt;SetBackgroundColour(0xff242424);
 TextureUnitState* tus = postfx_pass-&gt;CreateTextureUnitState();
 Texture* rt_texture = new Texture(scene_rt);
 tus-&gt;SetTexture(rt_texture);
-GpuProgram* postfx_gpu_program = GpuProgramManager::Instance()-&gt;LoadFromSource(PostFxGpuProgram, &quot;postfx.fx&quot;, &quot;DefaultVertexShader&quot;, &quot;DefaultFragmentShader&quot;);
+GpuProgram* postfx_gpu_program = GpuProgramManager::Instance()-&gt;LoadFromSource(&quot;postfx.fx&quot;, PostFxGpuProgram, &quot;DefaultVertexShader&quot;, &quot;DefaultFragmentShader&quot;);
 postfx_pass-&gt;SetGpuProgram(postfx_gpu_program);
 </code></pre>
 <p>The last step of the initialisation is to create the triangle mesh:</p>
