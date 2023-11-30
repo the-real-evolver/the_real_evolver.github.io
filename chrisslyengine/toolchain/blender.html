@@ -144,13 +144,22 @@
 <li>textures are exported in R8G8B8A8 format</li>
 <li>axis_conversion(to_forward='-Z', to_up='+Y') on static meshes and morph animations, but not on skeletal animations</li>
 <li>modifiers are not applied (to apply: 'Object Mode -&gt; Object -&gt; Apply -&gt; All Transforms')</li>
-<li>for a custom gpu program:
+<li>set a custom gpu program in material:
 <ol>
 <li>select material</li>
 <li>'Custom Properties -&gt; New'</li>
 <li>name the new property 'gpu_program' and select 'String' as type</li>
 <li>set value (like &quot;skybox.fx&quot;)</li>
 <li>after export your (.material) file will contain a line 'gpu_program &quot;skybox.fx&quot;' in the pass section</li>
+</ol>
+</li>
+<li>add a custom/external cubemap to material:
+<ol>
+<li>select material</li>
+<li>'Custom Properties -&gt; New'</li>
+<li>name the new property 'cubic_texture' and select 'String' as type</li>
+<li>set value (like &quot;irradiance.tex&quot;)</li>
+<li>after export your (.material) file will contain another texture_unit with the given cubemap in the pass section</li>
 </ol>
 </li>
 </ul>
