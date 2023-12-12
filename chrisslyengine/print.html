@@ -214,7 +214,7 @@
 <h3 id="building-the-sample-1"><a class="header" href="#building-the-sample-1">Building the sample</a></h3>
 <ol>
 <li>install <a href="http://devkitpro.org/wiki/Getting_Started/devkitPSP">devkitPSP</a></li>
-<li>open a commandline, goto 'chrisslyengine\psp' and run 'make' or open 'ChrisslyEngine_PSP.pnproj' and press 'ALT + 1'</li>
+<li>open a commandline, goto 'chrisslyengine\psp' and run 'make' or open 'ChrisslyEngine_PSP.pnproj' and press 'Alt + 1'</li>
 <li>run 'psp\exportassets.cmd'</li>
 </ol>
 <h3 id="running-the-sample-on-a-real-psp"><a class="header" href="#running-the-sample-on-a-real-psp">Running the sample on a real PSP</a></h3>
@@ -238,12 +238,12 @@
 <ol>
 <li>install Android Studio Giraffe | 2022.3.1 or higher</li>
 <li>open project 'chrisslyengine/android' in Android Studio</li>
-<li>press 'CTRL + F9' to build the application</li>
+<li>press 'Ctrl + F9' to build the application</li>
 <li>run 'exportassets.cmd'</li>
 </ol>
 <h3 id="running-the-sample-with-android-studio"><a class="header" href="#running-the-sample-with-android-studio">Running the sample with Android Studio</a></h3>
 <ol>
-<li>press 'SHIFT + F10' in Android Studio to start the sample application</li>
+<li>press 'Shift + F10' in Android Studio to start the sample application</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="toolchain"><a class="header" href="#toolchain">Toolchain</a></h1>
 <p>Internal and external tools used for working with the engine.</p>
@@ -288,7 +288,7 @@
 <ul>
 <li>limit weights per vertex to 4 (in 'Weight Paint' mode: 'Weights -&gt; Limit Total')</li>
 <li>normalise weights so all weights of a vertex sum up to 1 (in 'Weight Paint' mode: 'Weights -&gt; Normalize All')</li>
-<li>in 'Pose Mode' set the bones transform mode to: &quot;Quaternion (WXYZ)&quot;</li>
+<li>in 'Pose Mode' set the bones transform mode to: 'Quaternion (WXYZ)'</li>
 <li>apply transform if the mesh or skeleton was moved, rotated or scaled </li>
 <li>always insert 'Location &amp; Rotation' to <code>all</code> channels (scale not supported)</li>
 <li>to add an animation just create a new Action</li>
@@ -353,12 +353,21 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gimp"><a class="header" href="#gimp">Gimp</a></h1>
 <h3 id="add-alpha-channel"><a class="header" href="#add-alpha-channel">Add alpha channel</a></h3>
 <ul>
-<li>&quot;Colours -&gt; Colour to Alpha...&quot;</li>
+<li>'Colours -&gt; Colour to Alpha...'</li>
 </ul>
 <h3 id="extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android"><a class="header" href="#extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android">Extract alpha to single png (useful when using a separate compressed texture for the alpha channel on android)</a></h3>
 <ol>
-<li>&quot;Colours -&gt; Components -&gt; Decompose...&quot; (&quot;RGBA&quot;, uncheck &quot;Decompose to Layers...&quot;)</li>
-<li>right click on image and &quot;Export As...&quot;</li>
+<li>'Colours -&gt; Components -&gt; Decompose...' ('RGBA', uncheck 'Decompose to Layers...')</li>
+<li>right click on image and 'Export As...'</li>
+</ol>
+<h3 id="add-greyscale-image-as-an-alpha-channel-to-image"><a class="header" href="#add-greyscale-image-as-an-alpha-channel-to-image">Add greyscale image as an alpha channel to image</a></h3>
+<ol>
+<li>Add an alpha channel to the image you want to mask 'Layer -&gt; Transparency -&gt; Add Alpha Channel'</li>
+<li>Right click the image layer in the layers panel, and click 'Add Layer Mask...'. The fill you choose for the mask doesn't matter at this stage - white or black will do.</li>
+<li>Open the other image you want to use as a mask, and select all 'Ctrl + A', and copy it, 'Ctrl + C'</li>
+<li>Back in the other image, select the layer mask thumbnail by clicking on it in the layers panel</li>
+<li>Paste the mask you copied earlier 'Ctrl + V'</li>
+<li>Hit the anchor icon or 'Ctrl + H', to anchor the floating selection to the layer mask.</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-tools"><a class="header" href="#command-line-tools">Command line tools</a></h1>
 <h2 id="texturetool"><a class="header" href="#texturetool">Texturetool</a></h2>
@@ -437,7 +446,7 @@ node // this is the root node &quot;current_level&quot;
         mesh &quot;dir/name.mesh&quot;
         cast_shadows true|false
         receives_shadows true|false
-        cull_frustum false
+        cull_frustum true|false
         animation &quot;AnimationName&quot;
         {
             enable true|false

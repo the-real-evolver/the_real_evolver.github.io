@@ -136,12 +136,21 @@
                         <h1 id="gimp"><a class="header" href="#gimp">Gimp</a></h1>
 <h3 id="add-alpha-channel"><a class="header" href="#add-alpha-channel">Add alpha channel</a></h3>
 <ul>
-<li>&quot;Colours -&gt; Colour to Alpha...&quot;</li>
+<li>'Colours -&gt; Colour to Alpha...'</li>
 </ul>
 <h3 id="extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android"><a class="header" href="#extract-alpha-to-single-png-useful-when-using-a-separate-compressed-texture-for-the-alpha-channel-on-android">Extract alpha to single png (useful when using a separate compressed texture for the alpha channel on android)</a></h3>
 <ol>
-<li>&quot;Colours -&gt; Components -&gt; Decompose...&quot; (&quot;RGBA&quot;, uncheck &quot;Decompose to Layers...&quot;)</li>
-<li>right click on image and &quot;Export As...&quot;</li>
+<li>'Colours -&gt; Components -&gt; Decompose...' ('RGBA', uncheck 'Decompose to Layers...')</li>
+<li>right click on image and 'Export As...'</li>
+</ol>
+<h3 id="add-greyscale-image-as-an-alpha-channel-to-image"><a class="header" href="#add-greyscale-image-as-an-alpha-channel-to-image">Add greyscale image as an alpha channel to image</a></h3>
+<ol>
+<li>Add an alpha channel to the image you want to mask 'Layer -&gt; Transparency -&gt; Add Alpha Channel'</li>
+<li>Right click the image layer in the layers panel, and click 'Add Layer Mask...'. The fill you choose for the mask doesn't matter at this stage - white or black will do.</li>
+<li>Open the other image you want to use as a mask, and select all 'Ctrl + A', and copy it, 'Ctrl + C'</li>
+<li>Back in the other image, select the layer mask thumbnail by clicking on it in the layers panel</li>
+<li>Paste the mask you copied earlier 'Ctrl + V'</li>
+<li>Hit the anchor icon or 'Ctrl + H', to anchor the floating selection to the layer mask.</li>
 </ol>
 
                     </main>
