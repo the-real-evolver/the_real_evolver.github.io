@@ -305,7 +305,7 @@
 |/
 +--------&gt; +X
 </code></pre>
-<p>OpenGL Right-handed (forward is -Z and Up is +Y)</p>
+<p>OpenGL Right-handed (forward is +Z and Up is +Y)</p>
 <pre><code class="language-cpp">+Y
 ^    -Z
 |   /
@@ -314,7 +314,7 @@
 |/
 +--------&gt; +X
 </code></pre>
-<p>That's why the exporter transforms the vertices with axis_conversion(to_forward='-Z', to_up='+Y').</p>
+<p>That's why the exporter transforms the vertices with axis_conversion(from_forward='-Y', to_forward='Z', to_up='Y').</p>
 <h3 id="separate-mesh-into-equal-chunks-by-a-grid"><a class="header" href="#separate-mesh-into-equal-chunks-by-a-grid">Separate mesh into equal chunks by a grid</a></h3>
 <p>This comes in handy to split large meshes like terrains in to smaller pieces for culling and coarse collision detection.</p>
 <ol>
