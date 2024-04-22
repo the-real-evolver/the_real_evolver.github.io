@@ -142,7 +142,7 @@
 <h3 id="export-directly-to-mesh-material-skeleton-and-tex-using-the-addon"><a class="header" href="#export-directly-to-mesh-material-skeleton-and-tex-using-the-addon">Export directly to (.mesh), (.material), (.skeleton) and (.tex) using the addon</a></h3>
 <ul>
 <li>textures are exported in R8G8B8A8 format</li>
-<li>axis_conversion(to_forward='-Z', to_up='+Y') on static meshes and morph animations, but not on skeletal animations</li>
+<li>axis_conversion(from_forward='-Y', to_forward='Z', to_up='Y') on static meshes and morph animations, but not on skeletal animations</li>
 <li>modifiers are not applied (to apply: 'Object Mode -&gt; Object -&gt; Apply -&gt; All Transforms')</li>
 <li>set a custom gpu program in material:
 <ol>
