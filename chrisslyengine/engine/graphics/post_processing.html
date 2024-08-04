@@ -204,6 +204,7 @@ RenderSystem::Instance()-&gt;SetViewport(window-&gt;GetViewport(0U));
 // set pass that applies posteffect and render full-screen triangle
 RenderSystem::Instance()-&gt;SetPass(postfx_pass);
 RenderSystem::Instance()-&gt;Render(fs_triangle-&gt;GetSubEntity(0U));
+window-&gt;UpdateFrameTime();
 window-&gt;SwapBuffers();
 // manually raise frame number to update animations
 GraphicsSystem::Instance()-&gt;RaiseFrameNumber();
