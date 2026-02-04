@@ -191,7 +191,7 @@ memcpy(buffer, vtx_data, sizeof(vtx_data));
 vertex_buffer-&gt;Unmap();
 Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;fs_triangle_mesh&quot;);
 SubMesh* sub_mesh = mesh-&gt;CreateSubMesh();
-sub_mesh-&gt;vertexData = CE_NEW VertexData(vertex_buffer);
+subMesh-&gt;vertexBuffer = vertex_buffer;
 sub_mesh-&gt;topology = PT_TRIANGLELIST;
 Entity* fs_triangle = SceneManager::Instance()-&gt;CreateEntity(&quot;fs_triangle_mesh&quot;);
 </code></pre>

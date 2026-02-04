@@ -330,6 +330,16 @@
 <li>remove leftovers from the grid</li>
 <li>in the exporter check the 'Objects as separate files' option</li>
 </ol>
+<h3 id="flat-normals-face-normal-on-all-vertices-of-the-face"><a class="header" href="#flat-normals-face-normal-on-all-vertices-of-the-face">Flat normals (face normal on all vertices of the face)</a></h3>
+<p>For the entire mesh:</p>
+<ol>
+<li>'Edit Mode' select all</li>
+<li>'Add Modifier -&gt; Edge Split'</li>
+<li>'Object Mode' select modifier and 'Apply'
+For particular faces:</li>
+<li>'Edit Mode' select face</li>
+<li>'Mesh -&gt; Split -&gt; Selection'</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="gimp"><a class="header" href="#gimp">Gimp</a></h1>
 <h3 id="add-alpha-channel"><a class="header" href="#add-alpha-channel">Add alpha channel</a></h3>
 <ul>
@@ -499,7 +509,7 @@ light
 
 collision
 {
-    &quot;dir/name.mesh&quot;
+    terrain|misc &quot;dir/name.mesh&quot;
 }
 
 game
@@ -777,7 +787,7 @@ memcpy(buffer, vtxData, sizeof(vtxData));
 vertexBuffer-&gt;Unmap();
 Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
 SubMesh* subMesh = mesh-&gt;CreateSubMesh();
-subMesh-&gt;vertexData = CE_NEW VertexData(vertexBuffer);
+subMesh-&gt;vertexBuffer = vertexBuffer;
 subMesh-&gt;SetMaterialName(&quot;green_material&quot;);
 subMesh-&gt;topology = PT_TRIANGLELIST;
 Entity* entity = SceneManager::Instance()-&gt;CreateEntity(&quot;mytrianglemesh&quot;);
@@ -841,7 +851,7 @@ memcpy(buffer, vtx_data, sizeof(vtx_data));
 vertex_buffer-&gt;Unmap();
 Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;fs_triangle_mesh&quot;);
 SubMesh* sub_mesh = mesh-&gt;CreateSubMesh();
-sub_mesh-&gt;vertexData = CE_NEW VertexData(vertex_buffer);
+subMesh-&gt;vertexBuffer = vertex_buffer;
 sub_mesh-&gt;topology = PT_TRIANGLELIST;
 Entity* fs_triangle = SceneManager::Instance()-&gt;CreateEntity(&quot;fs_triangle_mesh&quot;);
 </code></pre>

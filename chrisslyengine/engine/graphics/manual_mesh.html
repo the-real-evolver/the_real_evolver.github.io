@@ -146,7 +146,7 @@ memcpy(buffer, vtxData, sizeof(vtxData));
 vertexBuffer-&gt;Unmap();
 Mesh* mesh = MeshManager::Instance()-&gt;CreateManual(&quot;mytrianglemesh&quot;);
 SubMesh* subMesh = mesh-&gt;CreateSubMesh();
-subMesh-&gt;vertexData = CE_NEW VertexData(vertexBuffer);
+subMesh-&gt;vertexBuffer = vertexBuffer;
 subMesh-&gt;SetMaterialName(&quot;green_material&quot;);
 subMesh-&gt;topology = PT_TRIANGLELIST;
 Entity* entity = SceneManager::Instance()-&gt;CreateEntity(&quot;mytrianglemesh&quot;);
