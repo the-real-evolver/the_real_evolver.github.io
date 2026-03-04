@@ -435,6 +435,8 @@ Comming soon!</p>
 <p>Right click 'Lights' in the World Outliner and choose 'Create Light'.</p>
 <h4 id="adding-collision-geometry"><a class="header" href="#adding-collision-geometry">Adding collision geometry</a></h4>
 <p>Right click 'Static Collision' in the World Outliner and choose 'Add Collision Mesh'.</p>
+<h4 id="create-collision-geometry-from-entity"><a class="header" href="#create-collision-geometry-from-entity">Create collision geometry from entity</a></h4>
+<p>Right click on an Entiy in the World Outliner and choose 'Export Collision'. This will create collision geometry from the mesh the entity is based on, considering the transformation by the scenenode it is attached to.</p>
 <h3 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
 <tr><td>Del</td><td>delete selected Entity, Scenenode, Light or Collision Mesh</td></tr>
@@ -509,7 +511,7 @@ light
 
 collision
 {
-    terrain|misc &quot;dir/name.mesh&quot;
+    terrain|levitating|misc &quot;dir/name.mesh&quot;
 }
 
 game
@@ -607,8 +609,8 @@ M_MESH_SKELETON_FILE        1           unsigned char
 
             filtering none|point|linear none|point|linear none|point|linear
 
-            scroll &lt;u&gt; &lt;v&gt;
-            scale &lt;u&gt; &lt;v&gt;
+            scroll &lt;u v&gt;
+            scale &lt;u v&gt;
 
             env_map spherical
         }
@@ -634,8 +636,8 @@ swizzled        1           unsigned char
     {
         index &lt;i&gt;
         parent &lt;p&gt;
-        local_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
-        inv_model_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
+        local_matrix &lt;m00 m01 m02 m03 m10 m11 m12 m13 m20 m21 m22 m23 m30 m31 m32 m33&gt;
+        inv_model_matrix &lt;m00 m01 m02 m03 m10 m11 m12 m13 m20 m21 m22 m23 m30 m31 m32 m33&gt;
     }
     bone &quot;AnotherBone&quot;
     {
@@ -653,7 +655,7 @@ animation &quot;Animationname&quot;
         key
         {
             time &lt;t&gt;
-            local_matrix &lt;m00 , m01, m02, m03, m10 , m11, m12, m13, m20 , m21, m22, m23, m30 , m31, m32, m33&gt;
+            local_matrix &lt;m00 m01 m02 m03 m10 m11 m12 m13 m20 m21 m22 m23 m30 m31 m32 m33&gt;
         }
         key
         {

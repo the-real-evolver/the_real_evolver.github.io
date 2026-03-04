@@ -148,6 +148,8 @@ Comming soon!</p>
 <p>Right click 'Lights' in the World Outliner and choose 'Create Light'.</p>
 <h4 id="adding-collision-geometry"><a class="header" href="#adding-collision-geometry">Adding collision geometry</a></h4>
 <p>Right click 'Static Collision' in the World Outliner and choose 'Add Collision Mesh'.</p>
+<h4 id="create-collision-geometry-from-entity"><a class="header" href="#create-collision-geometry-from-entity">Create collision geometry from entity</a></h4>
+<p>Right click on an Entiy in the World Outliner and choose 'Export Collision'. This will create collision geometry from the mesh the entity is based on, considering the transformation by the scenenode it is attached to.</p>
 <h3 id="keyboard-shortcuts"><a class="header" href="#keyboard-shortcuts">Keyboard Shortcuts</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
 <tr><td>Del</td><td>delete selected Entity, Scenenode, Light or Collision Mesh</td></tr>
@@ -222,7 +224,7 @@ light
 
 collision
 {
-    terrain|misc &quot;dir/name.mesh&quot;
+    terrain|levitating|misc &quot;dir/name.mesh&quot;
 }
 
 game
